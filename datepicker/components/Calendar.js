@@ -30,9 +30,9 @@ class Calendar extends Component {
   render () {
     const { displayDate, visible } = this.props;
     return (
-      <div className={"calendar" + (visible ? " calendar-show" : " calendar-hide")}>
+      <div className={'calendar' + (visible ? ' calendar-show' : ' calendar-hide')}>
         <header>
-          <MonthHeader ref={"monthHeader"} {...this.props} />
+          <MonthHeader ref={'monthHeader'} {...this.props} />
           <WeekHeader />
         </header>
         <Weeks {...this.props} />
