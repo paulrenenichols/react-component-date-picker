@@ -22,18 +22,18 @@ class Day extends Component {
 
   getDayClassName(day) {
     const { displayDate, selectedDate } = this.props;
-    var className = "day";
+    var className = 'day';
     if (DateUtilities.areSameYearMonthDay(day, new Date())) {
-      className += " today";
+      className += ' today';
     }
     if (!DateUtilities.areSameYearMonth(displayDate, day)) {
-      className += " other-month";
+      className += ' other-month';
     }
     if (this.props.selectedDate && DateUtilities.areSameYearMonthDay(day, selectedDate)) {
-      className += " selected";
+      className += ' selected';
     }
     if (this.isDisabled(day)) {
-      className += " disabled";
+      className += ' disabled';
     }
     return className;
   }
