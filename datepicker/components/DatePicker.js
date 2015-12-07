@@ -16,7 +16,7 @@ class DatePicker extends Component {
     visible: PropTypes.bool.isRequired,
     minimumDate: PropTypes.instanceOf(Date),
     maximumDate: PropTypes.instanceOf(Date),
-    selectedDateChange: PropTypes.func
+    onChange: PropTypes.func
   }
 
   defaultDate = new Date();
@@ -58,11 +58,11 @@ class DatePicker extends Component {
   }
 
   setSelectedDate = (nextSelectedDate) => {
-    const { selectedDateChange } = this.props;
+    const { onChange } = this.props;
     this.setState({
       selectedDate: DateUtilities.quantizeDateToYearMonthDay(nextSelectedDate)
     });
-    selectedDateChange(nextSelectedDate);
+    onChange(nextSelectedDate);
   }
 
   setDisplayDate = (nextDisplayDate) => {

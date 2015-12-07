@@ -23,7 +23,7 @@ window.store = store;
 
 render(
   <Provider store={store}>
-    <App selectedDateChange={updateSelectedDate}/>
+    <App onChange={updateSelectedDate}/>
   </Provider>,
   document.getElementById('root')
 );
