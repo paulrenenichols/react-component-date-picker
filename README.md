@@ -21,7 +21,7 @@ var DatePicker = reactDatePicker.DatePicker;
 
 ```
 
-An example in **es1015** and **jsx**:
+An example in **es2015** and **jsx**:
 
 ```
 import React, { Component } from 'react';
