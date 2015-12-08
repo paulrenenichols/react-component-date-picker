@@ -19,7 +19,7 @@ app.get('*', function(req, res) {
 
 console.log('process.env.DEV_SERVER_PORT: ', process.env.DEV_SERVER_PORT);
 
-var portNumber = process.env.DEV_SERVER_PORT;
+var portNumber = process.env.DEV_SERVER_PORT || 3000;
 
 app.listen(portNumber, 'localhost', function(err) {
   if (err) {
