@@ -104,6 +104,10 @@ function compareDatesByYearMonth(dateOne, dateTwo) {
   return compareDatesByFullTime(quantizeDateToYearMonth(dateOne), quantizeDateToYearMonth(dateTwo));
 }
 
+function compareDatesByDay(dateOne, dateTwo) {
+  return compareDatesByFullTime(quantizeDateToDay(dateOne), quantizeDateToDay(dateTwo));
+}
+
 function areSameYearMonthDay(dateOne, dateTwo) {
   return DateUtilities.compareDatesByYearMonthDay(dateOne, dateTwo) === 0;
 }
@@ -118,6 +122,10 @@ function quantizeDateToYearMonthDay(date) {
 
 function quantizeDateToYearMonth(date) {
   return new Date(date.getFullYear(), date.getMonth(), 1);
+}
+
+function quantizeDateToDay(date) {
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0);
 }
 
 function cloneDate(date) {
@@ -176,10 +184,12 @@ const DateUtilities = {
   compareDatesByFullTime,
   compareDatesByYearMonthDay,
   compareDatesByYearMonth,
+  compareDatesByDay,
   areSameYearMonthDay,
   areSameYearMonth,
   quantizeDateToYearMonthDay,
   quantizeDateToYearMonth,
+  quantizeDateToDay,
   cloneDate,
   addDaysToDate,
   addMonthsToDate,

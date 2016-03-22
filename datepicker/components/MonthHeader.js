@@ -30,9 +30,9 @@ class MonthHeader extends Component {
     const { displayDate } = this.props;
     return (
       <div className={"month-header"}>
-        <button onClick={() => this.displayPreviousMonth()} className={""} >{String.fromCharCode(9664)}</button>
+        <button type="button" onClick={() => this.displayPreviousMonth()} className={""} >{String.fromCharCode(9664)}</button>
         <h3>{DateUtilities.toMonthYearString(displayDate)}</h3>
-        <button onClick={() => this.displayNextMonth()} className={""} >{String.fromCharCode(9654)}</button>
+        <button type="button" onClick={() => this.displayNextMonth()} className={""} >{String.fromCharCode(9654)}</button>
       </div>
     );
   }

@@ -17,7 +17,7 @@ class Day extends Component {
   isDisabled(day) {
     const { minimumDate, maximumDate } = this.props;
 
-    return (minimumDate && (DateUtilities.compareDatesByDay(day, minimumDate)) < 0) || (maximumDate && DateUtilities.compareDatesByDay(day, maximumDate) > 0);
+    return (minimumDate && (DateUtilities.compareDatesByDay(day, minimumDate)) >= 0) || (maximumDate && DateUtilities.compareDatesByDay(day, maximumDate) < 0);
   }
 
   getDayClassName(day) {
@@ -40,7 +40,7 @@ class Day extends Component {
 
   dayClickHandler = (e) => {
     const { day, setSelectedDate, displayDate } = this.props;
-    if (DateUtilities.areSameYearMonth(displayDate, day)) {
+    if (DateUtilities.areSameYearMonth(displayDate, day) && !this.isDisabled(day)) {
       setSelectedDate(day);
     }
   }
