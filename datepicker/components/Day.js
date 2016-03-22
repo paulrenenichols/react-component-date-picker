@@ -17,7 +17,7 @@ class Day extends Component {
   isDisabled(day) {
     const { minimumDate, maximumDate } = this.props;
 
-    return (minimumDate && (DateUtilities.compareDatesByDay(day, minimumDate)) < 0) || (maximumDate && DateUtilities.compareDatesByDay(day, maximumDate) > 0);
+    return (minimumDate && (DateUtilities.compareDatesByDay(day, minimumDate)) >= 0) || (maximumDate && DateUtilities.compareDatesByDay(day, maximumDate) < 0);
   }
 
   getDayClassName(day) {
