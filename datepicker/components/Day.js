@@ -40,7 +40,7 @@ class Day extends Component {
 
   dayClickHandler = (e) => {
     const { day, setSelectedDate, displayDate } = this.props;
-    if (DateUtilities.areSameYearMonth(displayDate, day)) {
+    if (DateUtilities.areSameYearMonth(displayDate, day) && !this.isDisabled(day)) {
       setSelectedDate(day);
     }
   }

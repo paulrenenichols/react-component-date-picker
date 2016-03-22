@@ -125,7 +125,7 @@ function quantizeDateToYearMonth(date) {
 }
 
 function quantizeDateToDay(date) {
-  return new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0 , 0);
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0);
 }
 
 function cloneDate(date) {
