@@ -9,7 +9,9 @@ class MonthHeader extends Component {
 
   static propTypes = {
     displayDate: PropTypes.instanceOf(Date).isRequired,
-    setDisplayDate: PropTypes.func.isRequired
+    setDisplayDate: PropTypes.func.isRequired,
+    minimumDate: PropTypes.instanceOf(Date),
+    maximumDate: PropTypes.instanceOf(Date)
   }
 
   constructor(props) {
@@ -26,10 +28,26 @@ class MonthHeader extends Component {
     setDisplayDate(DateUtilities.addMonthsToDate(displayDate, 1));
   }
 
+  getMonthHeaderClassName = () => {
+    const { displayDate, minimumDate, maximumDate} = this.props;
+
+    var className = 'month-header';
+
+    if (DateUtilities.areSameYearMonth(displayDate, minimumDate)) {
+      className += ' minimum-date-month';
+    }
+
+    if (DateUtilities.areSameYearMonth(displayDate, maximumDate)) {
+      className += ' maximum-date-month';
+    }
+
+    return className;
+  }
+
   render () {
     const { displayDate } = this.props;
     return (
-      <div className={"month-header"}>
+      <div className={this.getMonthHeaderClassName()}>
         <button type="button" onClick={() => this.displayPreviousMonth()} className={""} >{String.fromCharCode(9664)}</button>
         <h3>{DateUtilities.toMonthYearString(displayDate)}</h3>
         <button type="button" onClick={() => this.displayNextMonth()} className={""} >{String.fromCharCode(9654)}</button>
