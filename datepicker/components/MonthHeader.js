@@ -33,11 +33,11 @@ class MonthHeader extends Component {
 
     var className = 'month-header';
 
-    if (DateUtilities.areSameYearMonth(displayDate, minimumDate)) {
+    if (minimumDate && DateUtilities.areSameYearMonth(displayDate, minimumDate)) {
       className += ' minimum-date-month';
     }
 
-    if (DateUtilities.areSameYearMonth(displayDate, maximumDate)) {
+    if (maximumDate && DateUtilities.areSameYearMonth(displayDate, maximumDate)) {
       className += ' maximum-date-month';
     }
 
